@@ -23,11 +23,12 @@
     "format": "prettier --write '{src,docs}/**/*.{ts,tsx,md}'",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
-    "prepare": "yarn build",
-    "release": "standard-version"
+    "prepare": "yarn build"
   },
   "author": "Angelo Ashmore",
-  "contributors": ["Raman Sinclair"],
+  "contributors": [
+    "Raman Sinclair"
+  ],
   "homepage": "https://github.com/arsinclair/gatsby-plugin-imgix-legacy",
   "repository": {
     "type": "git",
@@ -68,7 +69,6 @@
     "microbundle": "^0.13.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "standard-version": "^9.1.1",
     "ts-jest": "^26.5.4",
     "tslib": "^2.1.0",
     "typescript": "^4.2.3"
