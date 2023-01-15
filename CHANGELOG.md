@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.0.0...v1.1.0) (2023-01-15)
+
+
+### Features
+
+* add Gatsby v4 support; add support for Gatsby 3 subversions ([aa25529](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/commit/aa25529122066ab5435543790a8c42d0636bd2de))
+
 ## 1.0.0 (2023-01-15)
 
 
