@@ -1,5 +1,5 @@
-export { buildImgixUrl, buildImgixFixed, buildImgixFluid } from './builders'
+export { buildImgixUrl, buildImgixFixed, buildImgixFluid } from './builders';
 
-export { transformUrlForWebProxy } from './utils'
+export { transformUrlForWebProxy } from './utils';
 
-export * from './types'
+export * from './types';

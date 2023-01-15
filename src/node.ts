@@ -1,13 +1,13 @@
-export * from './createImgixTypes'
+export * from './createImgixTypes';
 
-export * from './createImgixFixedType'
-export * from './createImgixFixedInterface'
-export * from './createImgixFixedFieldConfig'
+export * from './createImgixFixedType';
+export * from './createImgixFixedInterface';
+export * from './createImgixFixedFieldConfig';
 
-export * from './createImgixFluidType'
-export * from './createImgixFluidInterface'
-export * from './createImgixFluidFieldConfig'
+export * from './createImgixFluidType';
+export * from './createImgixFluidInterface';
+export * from './createImgixFluidFieldConfig';
 
-export * from './createImgixUrlFieldConfig'
+export * from './createImgixUrlFieldConfig';
 
-export * from './createImgixUrlParamsInputType'
+export * from './createImgixUrlParamsInputType';
