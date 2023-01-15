@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.1.0...v1.1.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* broken NPM publishing due to publish condition being 'false' ([be35960](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/commit/be35960637a1ca40dd9022785bf414cf118b2c97))
+
 ## [1.1.0](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.0.0...v1.1.0) (2023-01-15)
 
 
