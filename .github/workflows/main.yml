@@ -11,15 +11,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: yarn install --frozen-lockfile
-        env:
-          CI: true
-      - run: yarn lint
-        env:
-          CI: true
-      - run: yarn test --ci --coverage --maxWorkers=2
-        env:
-          CI: true
-      - run: yarn build
-        env:
-          CI: true
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test --ci --coverage --maxWorkers=2
+      - run: npm run build
