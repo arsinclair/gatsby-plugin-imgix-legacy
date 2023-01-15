@@ -1,77 +1,77 @@
-import { GatsbyCache } from 'gatsby'
-import * as Ap from 'fp-ts/Apply'
-import * as TE from 'fp-ts/TaskEither'
-import { pipe } from 'fp-ts/function'
+import { GatsbyCache } from 'gatsby';
+import * as Ap from 'fp-ts/Apply';
+import * as TE from 'fp-ts/TaskEither';
+import { pipe } from 'fp-ts/function';
 
-import { ImgixMetadata } from './types'
-import { buildImgixUrl } from './builders'
+import { ImgixMetadata } from './types';
+import { buildImgixUrl } from './builders';
 import {
-  getFromCacheOr,
-  fetchJSON,
-  taskEitherFromSourceDataResolver,
-  fetch,
-  buildBase64URL,
-} from './utils'
+    getFromCacheOr,
+    fetchJSON,
+    taskEitherFromSourceDataResolver,
+    fetch,
+    buildBase64URL
+} from './utils';
 
 export type ImgixSourceDataResolver<TSource, TData> = (
-  obj: TSource,
+    obj: TSource,
 ) => TData | null | undefined | void | Promise<TData | null | undefined | void>
 
 export const fetchImgixMetadata = (
-  cache: GatsbyCache,
-  secureUrlToken?: string,
+    cache: GatsbyCache,
+    secureUrlToken?: string,
 ) => (url: string): TE.TaskEither<Error, ImgixMetadata> =>
-  getFromCacheOr(`gatsby-plugin-imgix-legacy-metadata-${url}`, cache, () =>
-    pipe({ fm: 'json' }, buildImgixUrl(url, secureUrlToken), (u) =>
-      fetchJSON(u),
-    ),
-  )
+    getFromCacheOr(`gatsby-plugin-imgix-legacy-metadata-${url}`, cache, () =>
+        pipe({ fm: 'json' }, buildImgixUrl(url, secureUrlToken), (u) =>
+            fetchJSON(u),
+        ),
+    );
 
 export const fetchImgixBase64Url = (cache: GatsbyCache) => (
-  url: string,
+    url: string,
 ): TE.TaskEither<Error, string> =>
-  getFromCacheOr(`gatsby-plugin-imgix-legacy-base64-url-${url}`, cache, () =>
-    pipe(
-      url,
-      fetch,
-      TE.chain((res) =>
+    getFromCacheOr(`gatsby-plugin-imgix-legacy-base64-url-${url}`, cache, () =>
         pipe(
-          TE.rightTask<Error, Buffer>(() => res.buffer()),
-          TE.chain((buffer) => TE.right(buffer.toString('base64'))),
-          TE.chain((base64) =>
-            TE.right(
-              buildBase64URL(String(res.headers.get('content-type')), base64),
+            url,
+            fetch,
+            TE.chain((res) =>
+                pipe(
+                    TE.rightTask<Error, Buffer>(() => res.buffer()),
+                    TE.chain((buffer) => TE.right(buffer.toString('base64'))),
+                    TE.chain((base64) =>
+                        TE.right(
+                            buildBase64URL(String(res.headers.get('content-type')), base64),
+                        ),
+                    ),
+                ),
             ),
-          ),
         ),
-      ),
-    ),
-  )
+    );
 
-const sequenceTTE = Ap.sequenceT(TE.taskEither)
+const sequenceTTE = Ap.sequenceT(TE.taskEither);
 
 export const resolveDimensions = <TSource>(
-  source: TSource,
-  resolveWidth: ImgixSourceDataResolver<TSource, number>,
-  resolveHeight: ImgixSourceDataResolver<TSource, number>,
-  cache: GatsbyCache,
-  secureUrlToken?: string,
+    source: TSource,
+    resolveWidth: ImgixSourceDataResolver<TSource, number>,
+    resolveHeight: ImgixSourceDataResolver<TSource, number>,
+    cache: GatsbyCache,
+    secureUrlToken?: string,
 ) => (url: string): TE.TaskEither<Error, [number, number]> =>
-  pipe(
-    sequenceTTE(
-      taskEitherFromSourceDataResolver(resolveWidth)(source),
-      taskEitherFromSourceDataResolver(resolveHeight)(source),
-    ),
-    TE.fold(
-      () =>
         pipe(
-          url,
-          fetchImgixMetadata(cache, secureUrlToken),
-          TE.map(
-            ({ PixelWidth, PixelHeight }) =>
-              [PixelWidth, PixelHeight] as [number, number],
-          ),
-        ),
-      TE.right,
-    ),
-  )
+            sequenceTTE(
+                taskEitherFromSourceDataResolver(resolveWidth)(source),
+                taskEitherFromSourceDataResolver(resolveHeight)(source),
+            ),
+            TE.fold(
+                () =>
+                    pipe(
+                        url,
+                        fetchImgixMetadata(cache, secureUrlToken),
+                        TE.map(
+                            ({ PixelWidth, PixelHeight }) =>
+                                [PixelWidth, PixelHeight] as [number, number],
+                        ),
+                    ),
+                TE.right,
+            ),
+        );

@@ -1,10 +1,10 @@
-import * as gatsby from 'gatsby'
+import * as gatsby from 'gatsby';
 
-export const FIXED_INTERFACE_NAME = 'ImgixFixedImage'
+export const FIXED_INTERFACE_NAME = 'ImgixFixedImage';
 
 export interface CreateImgixFixedInterfaceArgs {
-  /** Gatsby schema builders from a Gatsby Node API. */
-  schema: gatsby.NodePluginSchema
+    /** Gatsby schema builders from a Gatsby Node API. */
+    schema: gatsby.NodePluginSchema
 }
 
 /**
@@ -17,18 +17,18 @@ export interface CreateImgixFixedInterfaceArgs {
  * @returns GraphQL interface used by types representing a gatsby-image FixedObject.
  */
 export const createImgixFixedInterface = (
-  args: CreateImgixFixedInterfaceArgs,
+    args: CreateImgixFixedInterfaceArgs,
 ): gatsby.GatsbyGraphQLInterfaceType =>
-  args.schema.buildInterfaceType({
-    name: FIXED_INTERFACE_NAME,
-    fields: {
-      base64: 'String!',
-      src: 'String!',
-      srcSet: 'String!',
-      srcWebp: 'String!',
-      srcSetWebp: 'String!',
-      sizes: 'String!',
-      width: 'Int!',
-      height: 'Int!',
-    },
-  })
+    args.schema.buildInterfaceType({
+        name: FIXED_INTERFACE_NAME,
+        fields: {
+            base64: 'String!',
+            src: 'String!',
+            srcSet: 'String!',
+            srcWebp: 'String!',
+            srcSetWebp: 'String!',
+            sizes: 'String!',
+            width: 'Int!',
+            height: 'Int!'
+        }
+    });

@@ -1,10 +1,10 @@
-import * as gatsby from 'gatsby'
+import * as gatsby from 'gatsby';
 
-export const FLUID_INTERFACE_NAME = 'ImgixFluidImage'
+export const FLUID_INTERFACE_NAME = 'ImgixFluidImage';
 
 export interface CreateImgixFluidInterfaceArgs {
-  /** Gatsby schema builders from a Gatsby Node API. */
-  schema: gatsby.NodePluginSchema
+    /** Gatsby schema builders from a Gatsby Node API. */
+    schema: gatsby.NodePluginSchema
 }
 
 /**
@@ -17,17 +17,17 @@ export interface CreateImgixFluidInterfaceArgs {
  * @returns GraphQL interface used by types representing a gatsby-image FluidObject.
  */
 export const createImgixFluidInterface = (
-  args: CreateImgixFluidInterfaceArgs,
+    args: CreateImgixFluidInterfaceArgs,
 ): gatsby.GatsbyGraphQLInterfaceType =>
-  args.schema.buildInterfaceType({
-    name: FLUID_INTERFACE_NAME,
-    fields: {
-      base64: 'String!',
-      src: 'String!',
-      srcSet: 'String!',
-      srcWebp: 'String!',
-      srcSetWebp: 'String!',
-      sizes: 'String!',
-      aspectRatio: 'Float!',
-    },
-  })
+    args.schema.buildInterfaceType({
+        name: FLUID_INTERFACE_NAME,
+        fields: {
+            base64: 'String!',
+            src: 'String!',
+            srcSet: 'String!',
+            srcWebp: 'String!',
+            srcSetWebp: 'String!',
+            sizes: 'String!',
+            aspectRatio: 'Float!'
+        }
+    });

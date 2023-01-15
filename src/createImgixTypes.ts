@@ -1,22 +1,22 @@
-import * as gatsby from 'gatsby'
+import * as gatsby from 'gatsby';
 
-import { createImgixFixedInterface } from './createImgixFixedInterface'
-import { createImgixFixedType } from './createImgixFixedType'
-import { createImgixFluidInterface } from './createImgixFluidInterface'
-import { createImgixFluidType } from './createImgixFluidType'
-import { createImgixUrlParamsInputType } from './createImgixUrlParamsInputType'
+import { createImgixFixedInterface } from './createImgixFixedInterface';
+import { createImgixFixedType } from './createImgixFixedType';
+import { createImgixFluidInterface } from './createImgixFluidInterface';
+import { createImgixFluidType } from './createImgixFluidType';
+import { createImgixUrlParamsInputType } from './createImgixUrlParamsInputType';
 
 export interface CreateImgixTypesArgs {
-  /** Name for the gatsby-image Fixed object type. */
-  fixedTypeName?: string
-  /** Name for the gatsby-image Fluid object type. */
-  fluidTypeName?: string
-  /** Name for the Imgix URL parameters input type. */
-  paramsInputTypeName?: string
-  /** Gatsby cache from a Gatsby Node API. */
-  cache: gatsby.GatsbyCache
-  /** Gatsby schema builders from a Gatsby Node API. */
-  schema: gatsby.NodePluginSchema
+    /** Name for the gatsby-image Fixed object type. */
+    fixedTypeName?: string
+    /** Name for the gatsby-image Fluid object type. */
+    fluidTypeName?: string
+    /** Name for the Imgix URL parameters input type. */
+    paramsInputTypeName?: string
+    /** Gatsby cache from a Gatsby Node API. */
+    cache: gatsby.GatsbyCache
+    /** Gatsby schema builders from a Gatsby Node API. */
+    schema: gatsby.NodePluginSchema
 }
 
 /**
@@ -39,26 +39,26 @@ export interface CreateImgixTypesArgs {
  * @returns GraphQL types used by fields created using `gatsby-plugin-imgix-legacy` field creators.
  */
 export const createImgixTypes = (
-  args: CreateImgixTypesArgs,
+    args: CreateImgixTypesArgs,
 ): gatsby.GatsbyGraphQLType[] => [
-  createImgixFixedType({
-    name: args.fixedTypeName,
-    cache: args.cache,
-    schema: args.schema,
-  }),
-  createImgixFixedInterface({
-    schema: args.schema,
-  }),
-  createImgixFluidType({
-    name: args.fluidTypeName,
-    cache: args.cache,
-    schema: args.schema,
-  }),
-  createImgixFluidInterface({
-    schema: args.schema,
-  }),
-  createImgixUrlParamsInputType({
-    name: args.paramsInputTypeName,
-    schema: args.schema,
-  }),
-]
+    createImgixFixedType({
+        name: args.fixedTypeName,
+        cache: args.cache,
+        schema: args.schema
+    }),
+    createImgixFixedInterface({
+        schema: args.schema
+    }),
+    createImgixFluidType({
+        name: args.fluidTypeName,
+        cache: args.cache,
+        schema: args.schema
+    }),
+    createImgixFluidInterface({
+        schema: args.schema
+    }),
+    createImgixUrlParamsInputType({
+        name: args.paramsInputTypeName,
+        schema: args.schema
+    })
+];
