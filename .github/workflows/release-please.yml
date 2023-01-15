@@ -11,5 +11,3 @@ jobs:
         with:
           release-type: node
           package-name: gatsby-plugin-imgix-legacy
-          release-as: 1.0.0
-          bootstrap-sha: "16bb3519ed159469e627dad5ef829e79dc9bfd92"
