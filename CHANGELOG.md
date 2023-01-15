@@ -5,4 +5,4 @@
 
 ### Features
 
-* forked and renamed the plugin to `gatsby-plugin-imgix-legacy` ([d654301](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/commit/d654301802ff1418a6c73445aa5ae08af01d5631))
+* forked and renamed the plugin to `gatsby-plugin-imgix-legacy` ([397d3fc](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/commit/397d3fca20821ae94f0383adf4198eaa96a0b9d8))
