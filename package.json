@@ -27,6 +27,7 @@
     "release": "standard-version"
   },
   "author": "Angelo Ashmore",
+  "contributors": ["Raman Sinclair"],
   "homepage": "https://github.com/arsinclair/gatsby-plugin-imgix-legacy",
   "repository": {
     "type": "git",
