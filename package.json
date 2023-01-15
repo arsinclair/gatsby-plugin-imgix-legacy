@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-plugin-imgix",
-  "version": "0.9.1-next.0",
+  "name": "gatsby-plugin-imgix-legacy",
+  "version": "1.0.0",
   "description": "Gatsby plugin which enables the use of Imgix to apply image transformations at request-time",
   "license": "BSD-2-Clause",
-  "main": "dist/gatsby-plugin-imgix.js",
-  "module": "dist/gatsby-plugin-imgix.modern.js",
+  "main": "dist/gatsby-plugin-imgix-legacy.js",
+  "module": "dist/gatsby-plugin-imgix-legacy.modern.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -27,10 +27,10 @@
     "release": "standard-version"
   },
   "author": "Angelo Ashmore",
-  "homepage": "https://github.com/WalltoWall/gatsby-plugin-imgix",
+  "homepage": "https://github.com/arsinclair/gatsby-plugin-imgix-legacy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WalltoWall/gatsby-plugin-imgix.git"
+    "url": "https://github.com/arsinclair/gatsby-plugin-imgix-legacy"
   },
   "keywords": [
     "gatsby",

@@ -1,12 +1,12 @@
-> **This package has been replaced by [`@imgix/gatsby`][imgix-gatsby]**
+> **This package is a fork of [gatsby-plugin-imgix](https://github.com/WalltoWall/gatsby-plugin-imgix) developed by Angelo Ashmore. The original package has been replaced by [`@imgix/gatsby`][imgix-gatsby]**
 >
 > The official Imgix plugin is based on this package and includes additional
 > features such as [gatsby-plugin-image] support. Please migrate to
 > `@imgix/gatsby`.
 >
-> This repository and npm package is deprecated.
+> This repository and npm package exist for those who still need to use the old version for some reason. This version should not be used in new projects. The original package was forked to override dependency incopatibility with _gatsby_. I [arsinclair](https://github.com/arsinclair) don't have an intention to further develop this plugin, only to ensure that it can still be installed and ran alongside newer gatsby versions. As the _BSD 2-clause_ license states, this package should be used at your own risk. 
 
-# gatsby-plugin-imgix
+# gatsby-plugin-imgix-legacy
 
 Gatsby plugin which enables the use of [Imgix][imgix] to apply image
 transformations at request-time.
@@ -18,12 +18,12 @@ Learn more about [Imgix on their site][imgix].
 
 ## Status
 
-[![npm version](https://img.shields.io/npm/v/gatsby-plugin-imgix?style=flat-square)](https://www.npmjs.com/package/gatsby-plugin-imgix)
+[![npm version](https://img.shields.io/npm/v/gatsby-plugin-imgix-legacy?style=flat-square)](https://www.npmjs.com/package/gatsby-plugin-imgix-legacy)
 
 ## Install
 
 ```sh
-npm install --save gatsby-plugin-imgix
+npm install --save gatsby-plugin-imgix-legacy
 ```
 
 ## How to use
@@ -34,7 +34,7 @@ npm install --save gatsby-plugin-imgix
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-plugin-imgix',
+      resolve: 'gatsby-plugin-imgix-legacy',
       options: {
         // Imgix source domain. This is required.
         domain: 'example-domain.imgix.net',
@@ -201,16 +201,12 @@ _Docs coming soon_
 
 ## For plugin developers
 
-`gatsby-plugin-imgix` can be used to provide [`gatsby-image`][gatsby-image]
+`gatsby-plugin-imgix-legacy` can be used to provide [`gatsby-image`][gatsby-image]
 support to your Imgix-backed plugin. Source plugins that serve Imgix URLs, such
 as `gatsby-source-prismic`, use this plugin for drop-in support of GraphQL-based
 image transformations.
 
-The following plugins use `gatsby-plugin-imgix`:
-
-- [`gatsby-source-prismic`][gatsby-source-prismic]
-
-The following functions can be used to integrate `gatsby-plugin-imgix` with your
+The following functions can be used to integrate `gatsby-plugin-imgix-legacy` with your
 plugin.
 
 All field config creators generate configs that can be provided to
@@ -227,7 +223,7 @@ functions.
 
 ```typescript
 import { GatsbyNode } from 'gatsby'
-import { createImgixTypes } from 'gatsby-plugin-imgix'
+import { createImgixTypes } from 'gatsby-plugin-imgix-legacy'
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async (
   gatsbyContext: CreateSchemaCustomizationArgs,
@@ -248,7 +244,7 @@ with URL parameters.
 
 ```typescript
 import { GatsbyNode } from 'gatsby'
-import { createImgixUrlFieldConfig } from 'gatsby-plugin-imgix'
+import { createImgixUrlFieldConfig } from 'gatsby-plugin-imgix-legacy'
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async (
   gatsbyContext: CreateSchemaCustomizationArgs,
@@ -276,7 +272,7 @@ Creates a GraphQL field config object that resolves an Imgix URL string to a
 
 ```typescript
 import { GatsbyNode } from 'gatsby'
-import { createImgixFixedFieldConfig } from 'gatsby-plugin-imgix'
+import { createImgixFixedFieldConfig } from 'gatsby-plugin-imgix-legacy'
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async (
   gatsbyContext: CreateSchemaCustomizationArgs,
@@ -305,7 +301,7 @@ Creates a GraphQL field config object that resolves an Imgix URL string to a
 
 ```typescript
 import { GatsbyNode } from 'gatsby'
-import { createImgixFluidFieldConfig } from 'gatsby-plugin-imgix'
+import { createImgixFluidFieldConfig } from 'gatsby-plugin-imgix-legacy'
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async (
   gatsbyContext: CreateSchemaCustomizationArgs,

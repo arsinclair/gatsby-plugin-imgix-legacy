@@ -218,7 +218,7 @@ export const onPreExtractQueries: GatsbyNode['onPreExtractQueries'] = (
     path.resolve(__dirname, '../fragments.js'),
     path.resolve(
       program.directory,
-      '.cache/fragments/gatsby-plugin-imgix-fragments.js',
+      '.cache/fragments/gatsby-plugin-imgix-legacy-fragments.js',
     ),
   )
 }

@@ -20,7 +20,7 @@ export interface CreateImgixTypesArgs {
 }
 
 /**
- * Creates the following shared GraphQL types used by fields created using `gatsby-plugin-imgix` field creators.
+ * Creates the following shared GraphQL types used by fields created using `gatsby-plugin-imgix-legacy` field creators.
  *
  * - **Fixed type**: Resolves to a gatsby-image FixedObject.
  *
@@ -36,7 +36,7 @@ export interface CreateImgixTypesArgs {
  *
  * @param args Arguments used to build the types.
  *
- * @returns GraphQL types used by fields created using `gatsby-plugin-imgix` field creators.
+ * @returns GraphQL types used by fields created using `gatsby-plugin-imgix-legacy` field creators.
  */
 export const createImgixTypes = (
   args: CreateImgixTypesArgs,

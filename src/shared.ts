@@ -21,7 +21,7 @@ export const fetchImgixMetadata = (
   cache: GatsbyCache,
   secureUrlToken?: string,
 ) => (url: string): TE.TaskEither<Error, ImgixMetadata> =>
-  getFromCacheOr(`gatsby-plugin-imgix-metadata-${url}`, cache, () =>
+  getFromCacheOr(`gatsby-plugin-imgix-legacy-metadata-${url}`, cache, () =>
     pipe({ fm: 'json' }, buildImgixUrl(url, secureUrlToken), (u) =>
       fetchJSON(u),
     ),
@@ -30,7 +30,7 @@ export const fetchImgixMetadata = (
 export const fetchImgixBase64Url = (cache: GatsbyCache) => (
   url: string,
 ): TE.TaskEither<Error, string> =>
-  getFromCacheOr(`gatsby-plugin-imgix-base64-url-${url}`, cache, () =>
+  getFromCacheOr(`gatsby-plugin-imgix-legacy-base64-url-${url}`, cache, () =>
     pipe(
       url,
       fetch,
