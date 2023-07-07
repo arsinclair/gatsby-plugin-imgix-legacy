@@ -1,6 +1,6 @@
 {
     "name": "gatsby-plugin-imgix-legacy",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Fork of gatsby-plugin-imgix to make it work with most recent versions of GatsbyJS",
     "license": "BSD-2-Clause",
     "main": "dist/gatsby-plugin-imgix-legacy.js",

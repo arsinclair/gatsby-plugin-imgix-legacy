@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.2.0...v1.2.1) (2023-07-07)
+
+
+### Bug Fixes
+
+* **graphql-types:** ensure short-description is defined ([#8](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/issues/8)) ([4c6db54](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/commit/4c6db5469781d767c10bb0ce9fe31307429518c0))
+
 ## [1.2.0](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.1.1...v1.2.0) (2023-07-07)
 
 
