@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.1.1...v1.2.0) (2023-07-07)
+
+
+### Features
+
+* add Gatsby v5 support ([#6](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/issues/6)) ([3de64cc](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/commit/3de64ccd56621c421a9ac2590d51e8383f5152da))
+
 ## [1.1.1](https://github.com/arsinclair/gatsby-plugin-imgix-legacy/compare/v1.1.0...v1.1.1) (2023-01-15)
 
 
